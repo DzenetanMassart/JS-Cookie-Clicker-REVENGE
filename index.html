@@ -3,33 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JS Cookie Clickers</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-    <link href="assets/css/cookie.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/cookie.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>JS COOKIE CLICKER REVENGE</title>
+    <script src="assets/js/cookie_canvas.js"></script>
 </head>
 
-<body>
-    <section class="container">
-        <div class="row">
-            <div class="xs-4" id="affichage">
-                <span></span>
-                <a id="clic" class="clic">
-                    <canvas class="cookie" id="cookie" width="500" height="500"></canvas>
-                </a>
-            </div>
-            <div class="xs-4"></div>
-            <div class="btn-group-vertical xs-4">
-                <button class="btn btn-primary" type="button" id="multiplier" class="multiplier"></button>
-                <button class="btn btn-primary" type="button" id="autoclic" class="autoclic"></button>
-                <button class="btn btn-primary" type="button" id="bonus" class="bonus"></button>
-            </div>
-            <div class="xs-4"></div>
+<body onload="setcanvas()">
+    <header>
+        <h1>JS COOKIE CLICKER REVENGE</h1>
+    </header>
 
-            <div class="xs-4"></div>
-        </div>
-        <button class="triche" id="triche">Triche</button>
-    </section>
-    <script src="assets/js/cookie.js "></script>
+    <script src="assets/js/cookie.js"></script>
+
+    <div class="fonctions">
+        <button class="clic" id="clic" onclick="x1()">Click*2</button>
+
+        <button class="auto" id="autoclick" onclick="autoclick()">Autoclick</button>
+
+        <button class="bonus" id="bonus" onclick="bonusTime()">Bonus de 30 secondes</button>
+    </div>
+
+    <p class="nbr">Nombre de cookie:
+        <span id="affichage">0</span>
+    </p>
+    <textarea class="msg" id="msg">Informations courantes !</textarea>
+    <div>
+        <canvas onclick="jouer()" id="cookie" width="500" height="500"></canvas>
+    </div>
+    <script src="assets/js/move_msg.js"></script>
+
 </body>
 
 </html>
