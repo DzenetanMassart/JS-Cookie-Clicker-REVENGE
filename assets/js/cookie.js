@@ -7,12 +7,7 @@ let bonus = document.querySelector('#bonus');
 let temps_bonus = 30
 
 
-
-
-
-let jouer = () => {
-    score = score + (1 * multiplicateur);
-    document.getElementById('affichage').innerText = score;
+function affiche() {
     if (multi_prix < score) {
         document.querySelector('#clic').style.display = "block";
     } else {
@@ -30,6 +25,16 @@ let jouer = () => {
     }
 }
 
+
+let jouer = () => {
+    score = score + (1 * multiplicateur);
+    document.getElementById('affichage').innerText = score;
+    document.getElementById('cookie').style.transform = "scale(0.98)";
+    setTimeout(function() { document.getElementById('cookie').style.transform = "scale(1.0)"; }, 100);
+
+    affiche();
+}
+
 let x1 = () => {
     if (score > multi_prix) {
         score = ((score - multiplicateur) - multi_prix)
@@ -41,11 +46,14 @@ let x1 = () => {
         msg.innerHTML =
             "\r Prix : " + multi_prix + " cookies !" +
             " \r Prochain prix: " + (multi_prix * 1.5) + " cookies !";
+        affiche();
 
     } else {
         msg.innerHTML = "Vous n'avez pas assez de cookies ! " +
             "\r Prix : " + multi_prix + " cookies !" +
             " \r Prochain prix: " + (multi_prix * 1.5) + " cookies !";
+        affiche();
+
     }
 }
 
@@ -60,32 +68,40 @@ let autoclick = () => {
         msg.innerHTML =
             " \r Prix : " + auto_prix + " cookies !" +
             " \r Prochain prix: " + (auto_prix * 1.5) + " cookies !";
+        affiche();
+
     } else {
         msg.innerHTML =
             "Vous n'avez pas assez de cookies ! " +
             " \r Prix : " + auto_prix + " cookies !" +
             " \r Prochain prix: " + (auto_prix * 1.5) + " cookies !";
+        affiche();
+
     }
 }
 
-let bonusTime = () => {
+let bonustps = () => {
 
     if (score > bonus_prix) {
-        intervalle = setInterval(timedText, 1000);
+        intervalle = setInterval(tps_texte, 1000);
         score = score - bonus_prix;
         bonus.disabled = true;
         bonusScore();
-        time();
-        timedText();
+        tps();
+        tps_texte();
         bonus_prix = Math.round(bonus_prix * 1.5)
         msg.innerHTML =
             "\r Prix : " + bonus_prix + " cookies !" +
             " \r Prochain prix: " + (bonus_prix * 1.5) + " cookies !";
+        affiche();
+
 
     } else {
         msg.innerHTML = "Vous n'avez pas assez de cookies ! " +
             "\r Prix : " + bonus_prix + " cookies !" +
             " \r Prochain prix: " + (bonus_prix * 1.5) + " cookies !";
+        affiche();
+
     }
 }
 
@@ -100,10 +116,10 @@ let bonusScoreEnd = () => {
     console.log(multiplicateur);
 }
 
-let time = () => {
-    setTimeout(bonusScoreEnd, 30000);
+let tps = () => {
+    settpsout(bonusScoreEnd, 30000);
 }
-let timedText = () => {
+let tps_texte = () => {
     temps_bonus = temps_bonus - 1
     if (temps_bonus == 0) {
         temps_bonus += 30
