@@ -14,32 +14,58 @@
 </head>
 
 <body onload="setcanvas()">
-    <header>
-        <h1>JS COOKIE CLICKER REVENGE</h1>
-    </header>
-
     <script src="assets/js/cookie.js"></script>
 
-    <div class="fonctions">
-        <button class="clic" id="clic" onclick="x1()">Click*2</button>
+    <header>
 
-        <button class="auto" id="autoclick" onclick="autoclick()">Autoclick</button>
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">
+                JS COOKIE CLICKER REVENGE
+            </a>
+        </nav>
 
-        <button class="bonus" id="bonus" onclick="bonusTime()">Bonus de 30 secondes</button>
-    </div>
 
-    <p class="nbr">Nombre de cookie:
-        <span id="affichage">0</span>
-    </p>
-    <textarea class="msg" id="msg">Informations courantes !</textarea>
-    <div>
-        <canvas onclick="jouer()" id="cookie" width="500" height="500"></canvas>
-    </div>
 
-    <button class="plein_ecran" onclick="openFullscreen()"><i class="fas fa-expand-arrows-alt"></i> Mettre en plein écran</button>
 
-    <script src="assets/js/move_msg.js"></script>
 
+    </header>
+    <section>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-text">
+                    <span class="navbar-text">
+                            Nombre de cookie:        <span id="affichage">0</span>
+            </span>
+            </span>
+        </nav>
+        <div class="d-flex justify-content-center cookie_conteneur">
+            <canvas onclick="jouer()" id="cookie" width="500" height="500"></canvas>
+        </div>
+        <div class="menu-side">
+            <div class="btn-group">
+                <button class="btn clic  btn-secondary" style="display: none;" type="button" id="clic" onclick="multi()">Click*2</button>
+                <button class="btn auto  btn-secondary" style="display: none;" type="button" id="autoclick" onclick="autoclic()">Autoclick</button>
+                <button class="btn bonus  btn-secondary" style="display: none;" type="button" id="bonus" onclick="bonustps()">Bonus de 30 secondes</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer>
+        <nav class="fixed-bottom  navbar navbar-light bg-light">
+            <span class="navbar-text">
+                            <span id="msg">Informations courantes</span>
+            </span>
+            <span class="navbar-text">
+                    <span style="color:red" id="bonus_text"></span>
+            </span>
+            <button class="btn plein_ecran btn-secondary" onclick="openFullscreen()"><i class="fas fa-expand-arrows-alt"></i> Mettre en plein écran</button>
+
+        </nav>
+    </footer>
 </body>
 
 </html>
