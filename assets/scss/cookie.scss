@@ -21,6 +21,7 @@ header {
 }
 
 canvas {
+    z-index: 0;
     display: block;
     margin: auto auto;
     transform: rotate(0deg);
@@ -105,6 +106,7 @@ canvas {
     .auto {
         left: 47.5%;
         position: absolute;
+        z-index: 5;
         display: none;
         display: none;
         -moz-box-shadow: inset 0px 1px 0px 0px $C1;
@@ -190,4 +192,13 @@ canvas {
             border: 0px;
         }
     }
+}
+
+.plein_ecran {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 1px;
+    height: 2.1vw;
 }
