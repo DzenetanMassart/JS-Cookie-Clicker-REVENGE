@@ -3,10 +3,10 @@ let multiplicateur = 1;
 let score = 0 * multiplicateur;
 
 //Gestion des prix
-let multi_prix = 50;
-let auto_prix = 200;
+let multi_prix = 200;
+let auto_prix = 500;
 let auto_dispo = 0;
-let bonus_prix = 500;
+let bonus_prix = 5000;
 
 //Gestion des affiliations
 let bonus = document.querySelector('#bonus');
@@ -27,10 +27,10 @@ function affiche() {
     if (auto_dispo === 0) {
         if (auto_prix < score && true) {
             document.querySelector('#autoclick').style.display = "block";
-
         } else {
             document.querySelector('#autoclick').style.display = "none";
         }
+
     } else {
         document.querySelector('#autoclick').style.display = "none";
     }
@@ -85,6 +85,7 @@ let autoclic = () => {
         auto_dispo++;
         msg.innerHTML =
             "<span style='font-weight:bold'>Auto-Clique</span> activé !";
+        document.getElementById('auto_dispo').innerHTML = '<i class="far fa-hand-pointer"></i>Auto-Clique activé !';
 
     } else {}
 }

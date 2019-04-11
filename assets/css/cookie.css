@@ -5,6 +5,4 @@ section { margin-top: 30px; }
 .menu-side { position: absolute; width: 100%; left: 0; top: 15%; text-align: center; }
 
 .clic .auto .bonus { display: none; }
-
-.apparition { -webkit-transform: scale(1.1); transform: scale(1.1); }
 /*# sourceMappingURL=cookie.css.map */
