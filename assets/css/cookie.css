@@ -1,8 +1,20 @@
-canvas { max-width: 100%; height: auto; }
-
 section { margin-top: 30px; }
 
 .menu-side { position: absolute; width: 100%; left: 0; top: 15%; text-align: center; }
 
 .clic .auto .bonus { display: none; }
+
+@media (min-width: 1280px) { .cookie_conteneur { margin: auto auto; height: 50%; width: 50%; }
+  canvas { height: 60%; width: 60%; } }
+
+@media (min-width: 1025px) and (max-width: 1280px) { .cookie_conteneur { margin: auto auto; height: 45%; width: 45%; }
+  canvas { height: 60%; width: 60%; } }
+
+@media (min-width: 768px) and (max-width: 1024px) { .cookie_conteneur { margin: auto auto; height: 50%; width: 50%; }
+  canvas { height: 80%; width: 80%; } }
+
+@media (min-width: 481px) and (max-width: 767px) { .cookie_conteneur { margin: auto auto; height: 80%; width: 80%; }
+  canvas { max-width: 100%; height: 80%; width: 80%; } }
+
+@media (min-width: 320px) and (max-width: 480px) { canvas { max-width: 100%; height: 100%; width: 100%; } }
 /*# sourceMappingURL=cookie.css.map */

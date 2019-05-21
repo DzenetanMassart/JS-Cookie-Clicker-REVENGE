@@ -61,10 +61,12 @@ let multi = () => {
         multiplicateur += 1;
         document.querySelector('#clic').innerText = "Clic* " + (multiplicateur + 1);
         document.getElementById('affichage').innerText = score;
+        msg.innerHTML = "Vous avez acheter un <span style='font-weight:bold'>\"clic*" + (multiplicateur) +
+            "\r\"</span>  à " + multi_prix + " cookies !";
         multi_prix = Math.round(multi_prix * 1.5);
-        msg.innerHTML = "Vous avez acheter un <span style='font-weight:bold'>\"clic*" + (multiplicateur + 1) +
-            "\r\"</span>  à " + multi_prix + " cookies !" +
-            " \r Prochain prix: " + Math.round(multi_prix * 1.5) + " cookies !";
+
+        msg.innerHTML += " \r Prochain prix: " + multi_prix + " cookies !";
+
         affiche();
 
     } else {
@@ -98,10 +100,11 @@ let bonustps = () => {
         bonusScore();
         tps();
         tps_texte();
-        bonus_prix = Math.round(bonus_prix * 1.5)
         msg.innerHTML = "Vous avez acheter le bonus qui <span style='font-weight:bold'>double la valeur du clic" +
-            "\r pendant 30 secondes </span> à " + bonus_prix + " cookies !" +
-            " \r Prochain prix: " + Math.round(bonus_prix * 1.5) + " cookies !";
+            "\r pendant 30 secondes </span> à " + bonus_prix + " cookies !";
+        bonus_prix = Math.round(bonus_prix * 1.5)
+
+        msg.innerHTML += " \r Prochain prix: " + Math.round(bonus_prix * 1.5) + " cookies !";
         affiche();
 
 
